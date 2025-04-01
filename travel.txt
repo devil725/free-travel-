@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Travel Opportunity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="landing">
+        <h1>Congratulations! Free Travel Opportunity!</h1>
+        <p>Click below to claim your free travel package.</p>
+        <button onclick="showForm()">Apply Now</button>
+    </div><div id="form" class="hidden">
+    <h2>Enter Your Details</h2>
+    <form onsubmit="return prank()">
+        <label>Name: <input type="text" required></label><br><br>
+        <label>Travel Date: <input type="date" required></label><br><br>
+        <label>Destination: <input type="text" required></label><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="prank" class="hidden">
+    <h1>April Fool!</h1>
+    <p>Sorry, no free travel! But nice try!</p>
+</div>
+
+<script>
+    function showForm() {
+        document.getElementById('landing').style.display = 'none';
+        document.getElementById('form').style.display = 'block';
+    }
+
+    function prank() {
+        document.getElementById('form').style.display = 'none';
+        document.getElementById('prank').style.display = 'block';
+        return false;
+    }
+</script>
+
+</body>
+</html>
